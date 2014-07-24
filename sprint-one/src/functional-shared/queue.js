@@ -8,9 +8,17 @@ var makeQueue = function(){
   someInstance.enqLoc = 0;
   someInstance.deqLoc = 0;
 
-  someInstance.enqueue = queueMethods.enqueue;
-  someInstance.dequeue = queueMethods.dequeue;
-  someInstance.size = queueMethods.size;
+  var extend = function(obj) {
+    for (var key in arguments){
+      var temp = arguments[key];
+      for (var key in temp){
+        obj[key] = temp[key];
+      }
+    }
+    return obj;
+  };
+
+	extend(someInstance, queueMethods);  
 
   return someInstance;
 
