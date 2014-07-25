@@ -36,8 +36,6 @@ treeMethods.addChild = function(value){
 
 treeMethods.contains = function(target, currentTree){
   currentTree = currentTree || this;
-  console.log(target, currentTree.value, currentTree.children);
-
   // Return true if current node value = target
   if (currentTree.value === target) {
     return true;
