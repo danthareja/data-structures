@@ -45,8 +45,11 @@ var searchTreeMethods = {
     } else if ( v < currentNode.value && currentNode.left) {
       return currentNode.contains(v, currentNode.left);
     // if the desired value is equal to the current node's value, value has been found
-    } else {
+    } else if ( currentNode.value === v ) {
       return true;
+    // if the desired value has not been found, values does not exist
+    } else {
+      return false;
     }
   },
   depthFirstLog: function(callback, currentNode){
